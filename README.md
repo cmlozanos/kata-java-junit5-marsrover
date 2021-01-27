@@ -9,7 +9,7 @@ the planet.
 
 Write an idiomatic <ins>piece of software that translates the commands sent from earth to actions executed by the rover </ins> yielding a final state..
 
-<ins>When the rover touches down on Mars, it is initialised with its current coordinates and the direction
+<ins>When the rover touches down on Mars, it is initialized with its current coordinates and the direction
 it is facing.</ins>
 
 These could be any coordinates, supplied as arguments (x, y, direction) e.g. (4,2, EAST).
@@ -29,3 +29,4 @@ Once the full command string has been followed, the rover reports it's current c
 
 ### Split the problem by steps
 * Step 1 - We need a robot named Rover
+* Step 2 - We need that when rover get initialized will have the next arguments (x,y,direction) as example we have 4,2,EAST as parameters
