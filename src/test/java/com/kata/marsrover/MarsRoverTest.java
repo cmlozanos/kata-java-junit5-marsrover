@@ -73,7 +73,11 @@ public class MarsRoverTest {
 	}
 
 	@ParameterizedTest(name = "x: {0}, y:{1}, direction:{2}")
-	@CsvSource({ "4, 2, EAST", "1, 2, EAST", "0, 0, EAST" })
+	@CsvSource({
+			"4, 2, EAST",
+			"1, 2, EAST",
+			"0, 0, EAST"
+	})
 	void testRoverCreation(int x, int y, String direction) {
 		var rover = new Rover(x, y, direction);
 		assertEquals("Rover", rover.getClass().getSimpleName());
@@ -81,9 +85,16 @@ public class MarsRoverTest {
 	}
 
 	@ParameterizedTest(name = "trnaslation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
-	@CsvSource({ "4, 2, EAST, F, 4, 3, EAST", "1, 2, EAST, B , 1, 1, EAST", "4, 2, WEST, F, 4, 1, WEST",
-			"1, 2, WEST, B , 1, 3, WEST", "4, 2, NORTH, F, 5, 2, NORTH", "1, 2, NORTH, B , 0, 2, NORTH",
-			"4, 2, SOUTH, F, 3, 2, SOUTH", "1, 2, SOUTH, B , 2, 2, SOUTH" })
+	@CsvSource({
+			"4, 2, EAST, F, 4, 3, EAST",
+			"1, 2, EAST, B , 1, 1, EAST",
+			"4, 2, WEST, F, 4, 1, WEST",
+			"1, 2, WEST, B , 1, 3, WEST",
+			"4, 2, NORTH, F, 5, 2, NORTH",
+			"1, 2, NORTH, B , 0, 2, NORTH",
+			"4, 2, SOUTH, F, 3, 2, SOUTH",
+			"1, 2, SOUTH, B , 2, 2, SOUTH"
+	})
 	void testRoverTranslation(int x, int y, String direction, String command, int xExpected, int yExpected,
 			String directionExpected) {
 		var rover = new Rover(x, y, direction);
