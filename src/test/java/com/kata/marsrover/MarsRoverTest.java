@@ -12,32 +12,44 @@ public class MarsRoverTest {
 
 	public class RoverTranslator {
 		public Rover translate(String command, Rover rover) {
-			if (isDirectionWest(rover.getDirection())) {
-				if (isCommandBackward(command)) {
-					rover.setY(rover.getY() + 1);
-				} else {
-					rover.setY(rover.getY() - 1);
-				}
-			} else if (isDirectionNorth(rover.getDirection())) {
-				if (isCommandBackward(command)) {
-					rover.setX(rover.getX() - 1);
-				} else {
-					rover.setX(rover.getX() + 1);
-				}
-			} else if (isDirectionSouth(rover.getDirection())) {
-				if (isCommandBackward(command)) {
-					rover.setX(rover.getX() + 1);
-				} else {
-					rover.setX(rover.getX() - 1);
-				}
-			} else {
-				if (isCommandBackward(command)) {
-					rover.setY(rover.getY() - 1);
-				} else {
-					rover.setY(rover.getY() + 1);
-				}
+			
+			if (isCommandBackward(command) && isDirectionWest(rover.getDirection())) {
+				rover.setY(rover.getY() + 1);
 			}
+			
+			if (isCommandBackward(command) && isDirectionNorth(rover.getDirection())) {
+				rover.setX(rover.getX() - 1);
+			}
+			
+			if (isCommandBackward(command) && isDirectionSouth(rover.getDirection())) {
+				rover.setX(rover.getX() + 1);
+			} 
+			
+			if (isCommandBackward(command) && isDirectionEast(rover.getDirection())) {
+				rover.setY(rover.getY() - 1);
+			}
+			
+			if (!isCommandBackward(command) && isDirectionWest(rover.getDirection())) {
+				rover.setY(rover.getY() - 1);
+			}
+			
+			if (!isCommandBackward(command) && isDirectionNorth(rover.getDirection())) {
+				rover.setX(rover.getX() + 1);
+			}
+			
+			if (!isCommandBackward(command) && isDirectionSouth(rover.getDirection())) {
+				rover.setX(rover.getX() - 1);
+			} 
+			
+			if (!isCommandBackward(command) && isDirectionEast(rover.getDirection())) {
+				rover.setY(rover.getY() + 1);
+			}
+			
 			return new Rover(rover.getX(), rover.getY(), rover.getDirection());
+		}
+
+		private boolean isDirectionEast(String direction) {
+			return "EAST".equals(direction);
 		}
 
 		private boolean isDirectionWest(String direction) {
