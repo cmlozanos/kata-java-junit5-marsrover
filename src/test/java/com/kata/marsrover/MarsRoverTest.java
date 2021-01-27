@@ -29,24 +29,25 @@ public class MarsRoverTest {
 				rover.setY(rover.getY() - 1);
 			}
 			
-			if (!isCommandBackward(command) && isDirectionWest(rover.getDirection())) {
+			if (isCommandForward(command) && isDirectionWest(rover.getDirection())) {
 				rover.setY(rover.getY() - 1);
 			}
 			
-			if (!isCommandBackward(command) && isDirectionNorth(rover.getDirection())) {
+			if (isCommandForward(command) && isDirectionNorth(rover.getDirection())) {
 				rover.setX(rover.getX() + 1);
 			}
 			
-			if (!isCommandBackward(command) && isDirectionSouth(rover.getDirection())) {
+			if (isCommandForward(command) && isDirectionSouth(rover.getDirection())) {
 				rover.setX(rover.getX() - 1);
 			} 
 			
-			if (!isCommandBackward(command) && isDirectionEast(rover.getDirection())) {
+			if (isCommandForward(command) && isDirectionEast(rover.getDirection())) {
 				rover.setY(rover.getY() + 1);
 			}
 			
 			return new Rover(rover.getX(), rover.getY(), rover.getDirection());
 		}
+
 
 		private boolean isDirectionEast(String direction) {
 			return "EAST".equals(direction);
@@ -66,6 +67,10 @@ public class MarsRoverTest {
 
 		private boolean isCommandBackward(String command) {
 			return "B".equals(command);
+		}
+		
+		private boolean isCommandForward(String command) {
+			return "F".equals(command);
 		}
 	}
 	
