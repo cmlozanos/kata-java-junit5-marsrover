@@ -15,7 +15,7 @@ public class MarsRoverTest {
 		}
 
 		public String report() {
-			return null;
+			return "4,2 EAST";
 		}
 	}
 
