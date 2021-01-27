@@ -27,19 +27,27 @@ public class MarsRoverTest {
 		}
 
 		public void translate(String command) {
-			if ("WEST".equals(this.direction)) {
-				if ("B".equals(command)) {
+			if (isDirectionWest()) {
+				if (isCommandBackward(command)) {
 					this.y++;
 				}else {
 					this.y--;
 				}
 			}else {
-				if ("B".equals(command)) {
+				if (isCommandBackward(command)) {
 					this.y--;
 				}else {
 					this.y++;
 				}
 			}
+		}
+
+		private boolean isDirectionWest() {
+			return "WEST".equals(this.direction);
+		}
+
+		private boolean isCommandBackward(String command) {
+			return "B".equals(command);
 		}
 	}
 
