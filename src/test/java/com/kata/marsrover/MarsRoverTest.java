@@ -44,13 +44,17 @@ public class MarsRoverTest {
     	assertEquals(String.format("(%d, %d) %s", x, y, direction), rover.report());
     }
 	
-	@Test
-	void testRoverTranslation() {
-		var rover = new Rover(4,2,"EAST");
-		String command = "F";
+	@ParameterizedTest(name = "trnaslation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
+	@CsvSource({
+			"4, 2, EAST, F, 4, 3, EAST",
+			"1, 2, EAST, F , 1, 3, EAST",
+			"0, 0, EAST, F , 0, 1, EAST"
+	})
+	void testRoverTranslation(int x, int y, String direction, String command, int xExpected, int yExpected, String directionExpected) {
+		var rover = new Rover(x, y, direction);
 		
 		rover.translate(command);
 		
-		assertEquals(String.format("(%d, %d) %s", 4, 3, "EAST"), rover.report());
+		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), rover.report());
 	}
 }
