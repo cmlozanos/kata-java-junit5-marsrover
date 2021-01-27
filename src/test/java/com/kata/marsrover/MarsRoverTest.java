@@ -39,6 +39,12 @@ public class MarsRoverTest {
 				}else {
 					this.x++;
 				}
+			} else if (isDirectionSouth()) {
+				if (isCommandBackward(command)) {
+					this.x++;
+				}else {
+					this.x--;
+				}
 			} else {
 				if (isCommandBackward(command)) {
 					this.y--;
@@ -54,6 +60,10 @@ public class MarsRoverTest {
 
 		private boolean isDirectionNorth() {
 			return "NORTH".equals(this.direction);
+		}
+
+		private boolean isDirectionSouth() {
+			return "SOUTH".equals(this.direction);
 		}
 
 		private boolean isCommandBackward(String command) {
