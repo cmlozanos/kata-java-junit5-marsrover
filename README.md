@@ -30,3 +30,4 @@ Once the full command string has been followed, the rover reports it's current c
 ### Split the problem by steps
 * Step 1 - We need a robot named Rover
 * Step 2 - We need that when rover get initialized will have the next arguments (x,y,direction) as example we have 4,2,EAST as parameters
+* Step 3 - We need a report from the rover with it's current coordinates and heading, x,y,direction parameters

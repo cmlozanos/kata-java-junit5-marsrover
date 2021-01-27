@@ -13,9 +13,15 @@ public class MarsRoverTest {
 
 		public Rover(int x, int y, String direction) {
 		}
+
+		public String report() {
+			return null;
+		}
 	}
 
 	@Test void testRoverCreation() {
-    	assertEquals("Rover", new Rover(4,2,"EAST").getClass().getSimpleName());
+    	var rover = new Rover(4,2,"EAST");
+		assertEquals("Rover", rover.getClass().getSimpleName());
+    	assertEquals("4,2 EAST", rover.report());
     }
 }
