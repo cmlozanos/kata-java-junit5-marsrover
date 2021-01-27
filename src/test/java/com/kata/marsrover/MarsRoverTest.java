@@ -12,11 +12,18 @@ public class MarsRoverTest {
 
 	public class Rover {
 
+		private int x;
+		private int y;
+		private String direction;
+
 		public Rover(int x, int y, String direction) {
+			this.x = x;
+			this.y = y;
+			this.direction = direction;
 		}
 
 		public String report() {
-			return "4,2 EAST";
+			return String.format("%d,%d %s", x, y, direction);
 		}
 	}
 
