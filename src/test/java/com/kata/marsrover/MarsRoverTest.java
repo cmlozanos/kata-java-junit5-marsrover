@@ -27,19 +27,19 @@ public class MarsRoverTest {
 		}
 
 		public Rover translate(String command, Rover rover) {
-			if (isDirectionWest()) {
+			if (isDirectionWest(rover.direction)) {
 				if (isCommandBackward(command)) {
 					rover.y++;
 				} else {
 					rover.y--;
 				}
-			} else if (isDirectionNorth()) {
+			} else if (isDirectionNorth(rover.direction)) {
 				if (isCommandBackward(command)) {
 					rover.x--;
 				} else {
 					rover.x++;
 				}
-			} else if (isDirectionSouth()) {
+			} else if (isDirectionSouth(rover.direction)) {
 				if (isCommandBackward(command)) {
 					rover.x++;
 				} else {
@@ -55,16 +55,16 @@ public class MarsRoverTest {
 			return new Rover(rover.x, rover.y, rover.direction);
 		}
 
-		private boolean isDirectionWest() {
-			return "WEST".equals(this.direction);
+		private boolean isDirectionWest(String direction) {
+			return "WEST".equals(direction);
 		}
 
-		private boolean isDirectionNorth() {
-			return "NORTH".equals(this.direction);
+		private boolean isDirectionNorth(String direction) {
+			return "NORTH".equals(direction);
 		}
 
-		private boolean isDirectionSouth() {
-			return "SOUTH".equals(this.direction);
+		private boolean isDirectionSouth(String direction) {
+			return "SOUTH".equals(direction);
 		}
 
 		private boolean isCommandBackward(String command) {
