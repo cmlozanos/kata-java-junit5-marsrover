@@ -10,51 +10,34 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class MarsRoverTest {
 
-	public class Rover {
-
-		private int x;
-		private int y;
-		private String direction;
-
-		public Rover(int x, int y, String direction) {
-			this.x = x;
-			this.y = y;
-			this.direction = direction;
-		}
-
-		public String report() {
-			return String.format("(%d, %d) %s", x, y, direction);
-		}
-	}
-
 	public class RoverTranslator {
 		public Rover translate(String command, Rover rover) {
-			if (isDirectionWest(rover.direction)) {
+			if (isDirectionWest(rover.getDirection())) {
 				if (isCommandBackward(command)) {
-					rover.y++;
+					rover.setY(rover.getY() + 1);
 				} else {
-					rover.y--;
+					rover.setY(rover.getY() - 1);
 				}
-			} else if (isDirectionNorth(rover.direction)) {
+			} else if (isDirectionNorth(rover.getDirection())) {
 				if (isCommandBackward(command)) {
-					rover.x--;
+					rover.setX(rover.getX() - 1);
 				} else {
-					rover.x++;
+					rover.setX(rover.getX() + 1);
 				}
-			} else if (isDirectionSouth(rover.direction)) {
+			} else if (isDirectionSouth(rover.getDirection())) {
 				if (isCommandBackward(command)) {
-					rover.x++;
+					rover.setX(rover.getX() + 1);
 				} else {
-					rover.x--;
+					rover.setX(rover.getX() - 1);
 				}
 			} else {
 				if (isCommandBackward(command)) {
-					rover.y--;
+					rover.setY(rover.getY() - 1);
 				} else {
-					rover.y++;
+					rover.setY(rover.getY() + 1);
 				}
 			}
-			return new Rover(rover.x, rover.y, rover.direction);
+			return new Rover(rover.getX(), rover.getY(), rover.getDirection());
 		}
 
 		private boolean isDirectionWest(String direction) {
