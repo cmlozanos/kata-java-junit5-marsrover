@@ -10,10 +10,12 @@ import org.junit.jupiter.api.Test;
 public class MarsRoverTest {
 
 	public class Rover {
-	
+
+		public Rover(int x, int y, String direction) {
+		}
 	}
 
 	@Test void testRoverCreation() {
-    	assertEquals("Rover", new Rover().getClass().getSimpleName());
+    	assertEquals("Rover", new Rover(4,2,"EAST").getClass().getSimpleName());
     }
 }
