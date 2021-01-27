@@ -80,7 +80,9 @@ public class MarsRoverTest {
 			"4, 2, WEST, F, 4, 1, WEST",
 			"1, 2, WEST, B , 1, 3, WEST",
 			"4, 2, NORTH, F, 5, 2, NORTH",
-			"1, 2, NORTH, B , 0, 2, NORTH"
+			"1, 2, NORTH, B , 0, 2, NORTH",
+			"4, 2, SOUTH, F, 3, 2, SOUTH",
+			"1, 2, SOUTH, B , 2, 2, SOUTH"
 	})
 	void testRoverTranslation(int x, int y, String direction, String command, int xExpected, int yExpected, String directionExpected) {
 		var rover = new Rover(x, y, direction);

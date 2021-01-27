@@ -36,5 +36,7 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 4.1 - Given an individual command B and rover initialized with (1,2, EAST) When rover translate the command Should move one step down in Y axis
 * Step 4.2 - Given an individual command F and rover initialized with (4,2, WEST) When rover translate the command Should move one step down in Y axis
 * Step 4.3 - Given an individual command B and rover initialized with (1,2, WEST) When rover translate the command Should move one step up in Y axis
-* Step 4.4 - Given an individual command F and rover initialized with (4,2, NORTH) When rover translate the command Should move one step down in X axis
-* Step 4.5 - Given an individual command B and rover initialized with (1,2, NORTH) When rover translate the command Should move one step up in X axis
+* Step 4.4 - Given an individual command F and rover initialized with (4,2, NORTH) When rover translate the command Should move one step up in X axis
+* Step 4.5 - Given an individual command B and rover initialized with (1,2, NORTH) When rover translate the command Should move one step down in X axis
+* Step 4.6 - Given an individual command F and rover initialized with (4,2, SOUTH) When rover translate the command Should move one step down in X axis
+* Step 4.7 - Given an individual command B and rover initialized with (1,2, SOUTH) When rover translate the command Should move one step up in X axis
