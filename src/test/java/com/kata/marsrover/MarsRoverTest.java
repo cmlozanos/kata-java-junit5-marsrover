@@ -26,32 +26,33 @@ public class MarsRoverTest {
 			return String.format("(%d, %d) %s", x, y, direction);
 		}
 
-		public void translate(String command) {
+		public Rover translate(String command, Rover rover) {
 			if (isDirectionWest()) {
 				if (isCommandBackward(command)) {
-					this.y++;
-				}else {
-					this.y--;
+					rover.y++;
+				} else {
+					rover.y--;
 				}
 			} else if (isDirectionNorth()) {
 				if (isCommandBackward(command)) {
-					this.x--;
-				}else {
-					this.x++;
+					rover.x--;
+				} else {
+					rover.x++;
 				}
 			} else if (isDirectionSouth()) {
 				if (isCommandBackward(command)) {
-					this.x++;
-				}else {
-					this.x--;
+					rover.x++;
+				} else {
+					rover.x--;
 				}
 			} else {
 				if (isCommandBackward(command)) {
-					this.y--;
-				}else {
-					this.y++;
+					rover.y--;
+				} else {
+					rover.y++;
 				}
 			}
+			return new Rover(rover.x, rover.y, rover.direction);
 		}
 
 		private boolean isDirectionWest() {
@@ -72,33 +73,23 @@ public class MarsRoverTest {
 	}
 
 	@ParameterizedTest(name = "x: {0}, y:{1}, direction:{2}")
-	@CsvSource({
-			"4, 2, EAST",
-			"1, 2, EAST",
-			"0, 0, EAST"
-	})
+	@CsvSource({ "4, 2, EAST", "1, 2, EAST", "0, 0, EAST" })
 	void testRoverCreation(int x, int y, String direction) {
-    	var rover = new Rover(x,y,direction);
-		assertEquals("Rover", rover.getClass().getSimpleName());
-    	assertEquals(String.format("(%d, %d) %s", x, y, direction), rover.report());
-    }
-	
-	@ParameterizedTest(name = "trnaslation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
-	@CsvSource({
-			"4, 2, EAST, F, 4, 3, EAST",
-			"1, 2, EAST, B , 1, 1, EAST",
-			"4, 2, WEST, F, 4, 1, WEST",
-			"1, 2, WEST, B , 1, 3, WEST",
-			"4, 2, NORTH, F, 5, 2, NORTH",
-			"1, 2, NORTH, B , 0, 2, NORTH",
-			"4, 2, SOUTH, F, 3, 2, SOUTH",
-			"1, 2, SOUTH, B , 2, 2, SOUTH"
-	})
-	void testRoverTranslation(int x, int y, String direction, String command, int xExpected, int yExpected, String directionExpected) {
 		var rover = new Rover(x, y, direction);
-		
-		rover.translate(command);
-		
-		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), rover.report());
+		assertEquals("Rover", rover.getClass().getSimpleName());
+		assertEquals(String.format("(%d, %d) %s", x, y, direction), rover.report());
+	}
+
+	@ParameterizedTest(name = "trnaslation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
+	@CsvSource({ "4, 2, EAST, F, 4, 3, EAST", "1, 2, EAST, B , 1, 1, EAST", "4, 2, WEST, F, 4, 1, WEST",
+			"1, 2, WEST, B , 1, 3, WEST", "4, 2, NORTH, F, 5, 2, NORTH", "1, 2, NORTH, B , 0, 2, NORTH",
+			"4, 2, SOUTH, F, 3, 2, SOUTH", "1, 2, SOUTH, B , 2, 2, SOUTH" })
+	void testRoverTranslation(int x, int y, String direction, String command, int xExpected, int yExpected,
+			String directionExpected) {
+		var rover = new Rover(x, y, direction);
+
+		var roverAfterTranslation = rover.translate(command, rover);
+
+		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
 }
