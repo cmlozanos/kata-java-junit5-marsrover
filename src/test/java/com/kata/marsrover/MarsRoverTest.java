@@ -28,7 +28,7 @@ public class MarsRoverTest {
 		}
 
 		public void translate(String command) {
-			
+			this.y++;
 		}
 	}
 
