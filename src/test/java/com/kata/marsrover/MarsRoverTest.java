@@ -13,22 +13,14 @@ public class MarsRoverTest {
 	public class RoverTranslator {
 		public Rover translate(String command, Rover rover) {
 			
-			if (isCommandBackward(command) && isDirectionWest(rover.getDirection())) {
-				rover.setY(rover.getY() + 1);
-			}
+			applyCommandBackward(command, rover);
+			applyCommandForward(command, rover);
 			
-			if (isCommandBackward(command) && isDirectionNorth(rover.getDirection())) {
-				rover.setX(rover.getX() - 1);
-			}
-			
-			if (isCommandBackward(command) && isDirectionSouth(rover.getDirection())) {
-				rover.setX(rover.getX() + 1);
-			} 
-			
-			if (isCommandBackward(command) && isDirectionEast(rover.getDirection())) {
-				rover.setY(rover.getY() - 1);
-			}
-			
+			return new Rover(rover.getX(), rover.getY(), rover.getDirection());
+		}
+
+
+		private void applyCommandForward(String command, Rover rover) {
 			if (isCommandForward(command) && isDirectionWest(rover.getDirection())) {
 				rover.setY(rover.getY() - 1);
 			}
@@ -44,8 +36,25 @@ public class MarsRoverTest {
 			if (isCommandForward(command) && isDirectionEast(rover.getDirection())) {
 				rover.setY(rover.getY() + 1);
 			}
+		}
+
+
+		private void applyCommandBackward(String command, Rover rover) {
+			if (isCommandBackward(command) && isDirectionWest(rover.getDirection())) {
+				rover.setY(rover.getY() + 1);
+			}
 			
-			return new Rover(rover.getX(), rover.getY(), rover.getDirection());
+			if (isCommandBackward(command) && isDirectionNorth(rover.getDirection())) {
+				rover.setX(rover.getX() - 1);
+			}
+			
+			if (isCommandBackward(command) && isDirectionSouth(rover.getDirection())) {
+				rover.setX(rover.getX() + 1);
+			} 
+			
+			if (isCommandBackward(command) && isDirectionEast(rover.getDirection())) {
+				rover.setY(rover.getY() - 1);
+			}
 		}
 
 
