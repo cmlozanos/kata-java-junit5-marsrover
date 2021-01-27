@@ -27,7 +27,11 @@ public class MarsRoverTest {
 		}
 
 		public void translate(String command) {
-			this.y++;
+			if ("B".equals(command)) {
+				this.y--;
+			}else {
+				this.y++;
+			}
 		}
 	}
 
