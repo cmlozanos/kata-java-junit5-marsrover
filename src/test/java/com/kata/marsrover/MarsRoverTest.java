@@ -9,7 +9,10 @@ import org.junit.jupiter.api.Test;
 
 public class MarsRoverTest {
 
+	public class Rover {
+	}
+
 	@Test void testRoverCreation() {
-    	assertEquals("Rover", new Object());
+    	assertEquals("Rover", new Rover());
     }
 }
