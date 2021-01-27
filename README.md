@@ -32,3 +32,4 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 2 - We need that when rover get initialized will have the next arguments (x,y,direction) as example we have 4,2,EAST as parameters
 * Step 3 - We need a report from the rover with it's current coordinates and heading, x,y,direction parameters
 * Step 3.1 - We need a report formatted as "(6, 4) NORTH"
+* Step 4 - Given an individual command F and rover initialized with (4,2, EAST) When rover translate the command Should move one step in Y axis

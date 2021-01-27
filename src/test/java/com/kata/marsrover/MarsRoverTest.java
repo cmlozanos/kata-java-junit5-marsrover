@@ -5,6 +5,7 @@ package com.kata.marsrover;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -25,6 +26,10 @@ public class MarsRoverTest {
 		public String report() {
 			return String.format("(%d, %d) %s", x, y, direction);
 		}
+
+		public void translate(String command) {
+			
+		}
 	}
 
 	@ParameterizedTest(name = "x: {0}, y:{1}, direction:{2}")
@@ -38,4 +43,14 @@ public class MarsRoverTest {
 		assertEquals("Rover", rover.getClass().getSimpleName());
     	assertEquals(String.format("(%d, %d) %s", x, y, direction), rover.report());
     }
+	
+	@Test
+	void testRoverTranslation() {
+		var rover = new Rover(4,2,"EAST");
+		String command = "F";
+		
+		rover.translate(command);
+		
+		assertEquals(String.format("(%d, %d) %s", 4, 3, "EAST"), rover.report());
+	}
 }
