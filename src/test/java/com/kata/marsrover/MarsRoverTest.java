@@ -25,7 +25,9 @@ public class MarsRoverTest {
 		public String report() {
 			return String.format("(%d, %d) %s", x, y, direction);
 		}
+	}
 
+	public class RoverTranslator {
 		public Rover translate(String command, Rover rover) {
 			if (isDirectionWest(rover.direction)) {
 				if (isCommandBackward(command)) {
@@ -71,7 +73,7 @@ public class MarsRoverTest {
 			return "B".equals(command);
 		}
 	}
-
+	
 	@ParameterizedTest(name = "x: {0}, y:{1}, direction:{2}")
 	@CsvSource({
 			"4, 2, EAST",
@@ -98,8 +100,9 @@ public class MarsRoverTest {
 	void testRoverTranslation(int x, int y, String direction, String command, int xExpected, int yExpected,
 			String directionExpected) {
 		var rover = new Rover(x, y, direction);
+		var roverTranslator = new RoverTranslator();
 
-		var roverAfterTranslation = rover.translate(command, rover);
+		var roverAfterTranslation = roverTranslator.translate(command, rover);
 
 		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
