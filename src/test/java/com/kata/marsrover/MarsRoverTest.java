@@ -29,16 +29,20 @@ public class MarsRoverTest {
 		private void applyCommandForward(String command, Rover rover) {
 			switch (rover.getDirection()) { 
 				case WEST: {
-					rover.setY(rover.getY() - 1);
+					rover.setX(rover.getX() - 1);
+					break;
 				}
 				case NORTH: {
-					rover.setX(rover.getX() + 1);
+					rover.setY(rover.getY() + 1);
+					break;
 				}
 				case SOUTH: {
-					rover.setX(rover.getX() - 1);
+					rover.setY(rover.getY() - 1);
+					break;
 				}
 				case EAST: {
-					rover.setY(rover.getY() + 1);
+					rover.setX(rover.getX() + 1);
+					break;
 				}
 			}
 		}
@@ -46,16 +50,20 @@ public class MarsRoverTest {
 		private void applyCommandBackward(String command, Rover rover) {
 			switch (rover.getDirection()) {
 				case WEST: {
-					rover.setY(rover.getY() + 1);
+					rover.setX(rover.getX() + 1);
+					break;
 				}
 				case NORTH: {
-					rover.setX(rover.getX() - 1);
+					rover.setY(rover.getY() - 1);
+					break;
 				}
 				case SOUTH: {
-					rover.setX(rover.getX() + 1);
+					rover.setY(rover.getY() + 1);
+					break;
 				}
 				case EAST: {
-					rover.setY(rover.getY() - 1);
+					rover.setX(rover.getX() - 1);
+					break;
 				}
 			}
 		}
@@ -88,14 +96,14 @@ public class MarsRoverTest {
 	
 	@ParameterizedTest(name = "trnaslation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
 	@CsvSource({
-			"4, 2, EAST, F, 4, 3, EAST",
-			"1, 2, EAST, B , 1, 1, EAST",
-			"4, 2, WEST, F, 4, 1, WEST",
-			"1, 2, WEST, B , 1, 3, WEST",
-			"4, 2, NORTH, F, 5, 2, NORTH",
-			"1, 2, NORTH, B , 0, 2, NORTH",
-			"4, 2, SOUTH, F, 3, 2, SOUTH",
-			"1, 2, SOUTH, B , 2, 2, SOUTH"
+			"4, 2, EAST, F, 5, 2, EAST",
+			"1, 2, EAST, B , 0, 2, EAST",
+			"4, 2, WEST, F, 3, 2, WEST",
+			"1, 2, WEST, B , 2, 2, WEST",
+			"4, 2, NORTH, F, 4, 3, NORTH",
+			"1, 2, NORTH, B , 1, 1, NORTH",
+			"4, 2, SOUTH, F, 4, 1, SOUTH",
+			"1, 2, SOUTH, B , 1, 3, SOUTH"
 	})
 	void testRoverTranslation(int x, int y, String direction, String command, int xExpected, int yExpected,
 			String directionExpected) {
