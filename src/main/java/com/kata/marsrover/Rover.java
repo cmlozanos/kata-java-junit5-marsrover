@@ -2,22 +2,18 @@ package com.kata.marsrover;
 
 public class Rover {
 
+	public enum Direction {
+		NORTH, EAST, SOUTH, WEST
+	}
+
 	private int x;
 	private int y;
-	private String direction;
+	private Direction direction;
 
 	public Rover(int x, int y, String direction) {
 		this.setX(x);
 		this.setY(y);
-		validateDirection(direction);
-	}
-
-	private void validateDirection(String direction) {
-		if ("NORTH".equals(direction) || "EAST".equals(direction) || "SOUTH".equals(direction) || "WEST".equals(direction)) {
-			this.direction = direction;
-		}else {
-			throw new IllegalArgumentException();
-		}
+		this.direction = Direction.valueOf(direction);
 	}
 
 	public String report() {
@@ -25,7 +21,7 @@ public class Rover {
 	}
 
 	public String getDirection() {
-		return direction;
+		return direction.name();
 	}
 
 	public int getY() {
