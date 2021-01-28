@@ -9,6 +9,10 @@ public class Rover {
 	public Rover(int x, int y, String direction) {
 		this.setX(x);
 		this.setY(y);
+		validateDirection(direction);
+	}
+
+	private void validateDirection(String direction) {
 		if ("NORTH".equals(direction) || "EAST".equals(direction) || "SOUTH".equals(direction) || "WEST".equals(direction)) {
 			this.direction = direction;
 		}else {
