@@ -9,7 +9,11 @@ public class Rover {
 	public Rover(int x, int y, String direction) {
 		this.setX(x);
 		this.setY(y);
-		this.direction = direction;
+		if ("NORTH".equals(direction) || "EAST".equals(direction) || "SOUTH".equals(direction) || "WEST".equals(direction)) {
+			this.direction = direction;
+		}else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	public String report() {
