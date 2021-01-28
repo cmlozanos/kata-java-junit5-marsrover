@@ -60,23 +60,6 @@ public class MarsRoverTest {
 			}
 		}
 
-
-		private boolean isDirectionEast(String direction) {
-			return "EAST".equals(direction);
-		}
-
-		private boolean isDirectionWest(String direction) {
-			return "WEST".equals(direction);
-		}
-
-		private boolean isDirectionNorth(String direction) {
-			return "NORTH".equals(direction);
-		}
-
-		private boolean isDirectionSouth(String direction) {
-			return "SOUTH".equals(direction);
-		}
-
 		private boolean isCommandBackward(String command) {
 			return "B".equals(command);
 		}
