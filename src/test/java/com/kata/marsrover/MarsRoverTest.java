@@ -23,36 +23,40 @@ public class MarsRoverTest {
 				applyCommandForward(command, rover);
 			}
 
-			return new Rover(rover.getX(), rover.getY(), rover.getDirection());
+			return new Rover(rover.getX(), rover.getY(), rover.getDirection().name());
 		}
 
 		private void applyCommandForward(String command, Rover rover) {
-			if (isDirectionWest(rover.getDirection())) {
-				rover.setY(rover.getY() - 1);
-			}
-			if (isDirectionNorth(rover.getDirection())) {
-				rover.setX(rover.getX() + 1);
-			}
-			if (isDirectionSouth(rover.getDirection())) {
-				rover.setX(rover.getX() - 1);
-			}
-			if (isDirectionEast(rover.getDirection())) {
-				rover.setY(rover.getY() + 1);
+			switch (rover.getDirection()) { 
+				case WEST: {
+					rover.setY(rover.getY() - 1);
+				}
+				case NORTH: {
+					rover.setX(rover.getX() + 1);
+				}
+				case SOUTH: {
+					rover.setX(rover.getX() - 1);
+				}
+				case EAST: {
+					rover.setY(rover.getY() + 1);
+				}
 			}
 		}
 
 		private void applyCommandBackward(String command, Rover rover) {
-			if (isDirectionWest(rover.getDirection())) {
-				rover.setY(rover.getY() + 1);
-			}
-			if (isDirectionNorth(rover.getDirection())) {
-				rover.setX(rover.getX() - 1);
-			}
-			if (isDirectionSouth(rover.getDirection())) {
-				rover.setX(rover.getX() + 1);
-			}
-			if (isDirectionEast(rover.getDirection())) {
-				rover.setY(rover.getY() - 1);
+			switch (rover.getDirection()) {
+				case WEST: {
+					rover.setY(rover.getY() + 1);
+				}
+				case NORTH: {
+					rover.setX(rover.getX() - 1);
+				}
+				case SOUTH: {
+					rover.setX(rover.getX() + 1);
+				}
+				case EAST: {
+					rover.setY(rover.getY() - 1);
+				}
 			}
 		}
 

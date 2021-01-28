@@ -20,8 +20,8 @@ public class Rover {
 		return String.format("(%d, %d) %s", getX(), getY(), getDirection());
 	}
 
-	public String getDirection() {
-		return direction.name();
+	public Direction getDirection() {
+		return direction;
 	}
 
 	public int getY() {
