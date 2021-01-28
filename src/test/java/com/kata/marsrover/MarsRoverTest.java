@@ -12,44 +12,45 @@ public class MarsRoverTest {
 
 	public class RoverTranslator {
 		public Rover translate(String command, Rover rover) {
-			
-			applyCommandBackward(command, rover);
-			applyCommandForward(command, rover);
-			
+
+			if (isCommandBackward(command)) {
+				applyCommandBackward(command, rover);
+			}
+
+			if (isCommandForward(command)) {
+				applyCommandForward(command, rover);
+			}
+
 			return new Rover(rover.getX(), rover.getY(), rover.getDirection());
 		}
 
 		private void applyCommandForward(String command, Rover rover) {
-			if (isCommandForward(command)) {
-				if (isDirectionWest(rover.getDirection())) {
-					rover.setY(rover.getY() - 1);
-				}
-				if (isDirectionNorth(rover.getDirection())) {
-					rover.setX(rover.getX() + 1);
-				}
-				if (isDirectionSouth(rover.getDirection())) {
-					rover.setX(rover.getX() - 1);
-				} 
-				if (isDirectionEast(rover.getDirection())) {
-					rover.setY(rover.getY() + 1);
-				}
+			if (isDirectionWest(rover.getDirection())) {
+				rover.setY(rover.getY() - 1);
+			}
+			if (isDirectionNorth(rover.getDirection())) {
+				rover.setX(rover.getX() + 1);
+			}
+			if (isDirectionSouth(rover.getDirection())) {
+				rover.setX(rover.getX() - 1);
+			}
+			if (isDirectionEast(rover.getDirection())) {
+				rover.setY(rover.getY() + 1);
 			}
 		}
 
 		private void applyCommandBackward(String command, Rover rover) {
-			if (isCommandBackward(command)) {
-				if (isDirectionWest(rover.getDirection())) {
-					rover.setY(rover.getY() + 1);
-				}
-				if (isDirectionNorth(rover.getDirection())) {
-					rover.setX(rover.getX() - 1);
-				}
-				if (isDirectionSouth(rover.getDirection())) {
-					rover.setX(rover.getX() + 1);
-				} 
-				if (isDirectionEast(rover.getDirection())) {
-					rover.setY(rover.getY() - 1);
-				}
+			if (isDirectionWest(rover.getDirection())) {
+				rover.setY(rover.getY() + 1);
+			}
+			if (isDirectionNorth(rover.getDirection())) {
+				rover.setX(rover.getX() - 1);
+			}
+			if (isDirectionSouth(rover.getDirection())) {
+				rover.setX(rover.getX() + 1);
+			}
+			if (isDirectionEast(rover.getDirection())) {
+				rover.setY(rover.getY() - 1);
 			}
 		}
 
