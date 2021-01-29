@@ -114,4 +114,9 @@ public class MarsRoverTest {
 
 		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
+	
+	@Test
+	void testRoverTranslationForInvalidCommand() {
+		assertThrows(IllegalArgumentException.class, ()-> new RoverTranslator().translate("P", new Rover(0,0,"SOUTH")));
+	}
 }

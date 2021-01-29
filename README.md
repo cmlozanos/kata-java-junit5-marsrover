@@ -41,3 +41,4 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 4.6 - Given an individual command F and rover initialized with (4,2, SOUTH) When rover translate the command Should move one step down in X axis
 * Step 4.7 - Given an individual command B and rover initialized with (1,2, SOUTH) When rover translate the command Should move one step up in X axis
 * Step 5 - When rover its initialized with invalid direction we expect an illegal argument exception
+* Step 6 - When rover translator receive an invalid command we expect an illegal argument exception
