@@ -15,6 +15,10 @@ public class MarsRoverTest {
 	public class RoverTranslator {
 		public Rover translate(String command, Rover rover) {
 
+			if(!isCommandBackward(command) && !isCommandForward(command)) {
+				throw new IllegalArgumentException();
+			}
+			
 			if (isCommandBackward(command)) {
 				applyCommandBackward(command, rover);
 			}
