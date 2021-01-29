@@ -12,19 +12,25 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class MarsRoverTest {
 
+	public enum Command {
+		F, B;
+	}
+	
 	public class RoverTranslator {
+		
+		
+		
 		public Rover translate(String command, Rover rover) {
 
-			if(!isCommandBackward(command) && !isCommandForward(command)) {
-				throw new IllegalArgumentException();
-			}
-			
-			if (isCommandBackward(command)) {
-				applyCommandBackward(command, rover);
-			}
-
-			if (isCommandForward(command)) {
-				applyCommandForward(command, rover);
+			switch (Command.valueOf(command)){
+				case B: {
+					applyCommandBackward(command, rover);
+					break;
+				}
+				case F: {
+					applyCommandForward(command, rover);
+					break;
+				}
 			}
 
 			return new Rover(rover.getX(), rover.getY(), rover.getDirection().name());
