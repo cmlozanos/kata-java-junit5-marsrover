@@ -32,12 +32,16 @@ public class MarsRoverTest {
 					break;
 				}
 				case R: {
-					rover.setDirection(Direction.EAST);
+					extracted(rover);
 					break;
 				}
 			}
 
 			return new Rover(rover.getX(), rover.getY(), rover.getDirection().name());
+		}
+
+		private void extracted(Rover rover) {
+			rover.setDirection(Direction.EAST);
 		}
 
 		private void applyCommandForward(String command, Rover rover) {
