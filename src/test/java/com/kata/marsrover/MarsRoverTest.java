@@ -77,14 +77,6 @@ public class MarsRoverTest {
 				}
 			}
 		}
-
-		private boolean isCommandBackward(String command) {
-			return "B".equals(command);
-		}
-		
-		private boolean isCommandForward(String command) {
-			return "F".equals(command);
-		}
 	}
 	
 	@ParameterizedTest(name = "x: {0}, y:{1}, direction:{2}")
