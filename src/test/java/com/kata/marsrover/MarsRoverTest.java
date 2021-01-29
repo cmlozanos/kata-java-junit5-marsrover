@@ -18,8 +18,6 @@ public class MarsRoverTest {
 	
 	public class RoverTranslator {
 		
-		
-		
 		public Rover translate(String command, Rover rover) {
 
 			switch (Command.valueOf(command)){
@@ -120,5 +118,11 @@ public class MarsRoverTest {
 	@Test
 	void testRoverTranslationForInvalidCommand() {
 		assertThrows(IllegalArgumentException.class, ()-> new RoverTranslator().translate("P", new Rover(0,0,"SOUTH")));
+	}
+	
+	@Test
+	void testRoverTranslationForRotationCommand() {
+		Rover roverAfterTranslation = new RoverTranslator().translate("R", new Rover(0,0,"NORTH"));
+		assertEquals(String.format("(%d, %d) %s", 0, 0, "EAST"), roverAfterTranslation .report());
 	}
 }
