@@ -39,4 +39,8 @@ public class Rover {
 	public void setX(int x) {
 		this.x = x;
 	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
 }
