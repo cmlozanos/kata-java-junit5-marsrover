@@ -100,7 +100,7 @@ public class MarsRoverTest {
 		assertThrows(IllegalArgumentException.class,() -> new Rover(0,0,"SOUTHWEST"));
 	}
 	
-	@ParameterizedTest(name = "trnaslation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
+	@ParameterizedTest(name = "translation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
 	@CsvSource({
 			"4, 2, EAST, F, 5, 2, EAST",
 			"1, 2, EAST, B , 0, 2, EAST",
@@ -126,9 +126,16 @@ public class MarsRoverTest {
 		assertThrows(IllegalArgumentException.class, ()-> new RoverTranslator().translate("P", new Rover(0,0,"SOUTH")));
 	}
 	
-	@Test
-	void testRoverTranslationForRotationCommand() {
-		Rover roverAfterTranslation = new RoverTranslator().translate("R", new Rover(0,0,"NORTH"));
-		assertEquals(String.format("(%d, %d) %s", 0, 0, "EAST"), roverAfterTranslation .report());
+	@ParameterizedTest(name = "translation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
+	@CsvSource({
+			"0, 0, NORTH, R, 0, 0, EAST",
+			"0, 0, EAST, R, 0, 0, SOUTH",
+			"0, 0, SOUTH, R, 0, 0, WEST",
+			"0, 0, WEST, R, 0, 0, NORTH",
+	})
+	void testRoverTranslationForRotationCommand(int x, int y, String direction, String command, int xExpected, int yExpected,
+			String directionExpected) {
+		var roverAfterTranslation = new RoverTranslator().translate(command, new Rover(x, y, direction));
+		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
 }

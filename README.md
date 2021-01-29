@@ -43,3 +43,6 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 5 - When rover its initialized with invalid direction we expect an illegal argument exception
 * Step 6 - When rover translator receive an invalid command we expect an illegal argument exception
 * Step 7 - Given an individual command R and rover initialized with direction NORTH rover should rotate to EAST
+* Step 7.1 - Given an individual command R and rover initialized with direction EAST rover should rotate to SOUTH
+* Step 7.2 - Given an individual command R and rover initialized with direction SOUTH rover should rotate to WEST
+* Step 7.3 - Given an individual command R and rover initialized with direction WEST rover should rotate to NORTH
