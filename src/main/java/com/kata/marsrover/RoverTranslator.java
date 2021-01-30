@@ -71,16 +71,16 @@ public class RoverTranslator {
 	private Point applyCommandForward(Rover rover) {
 		switch (rover.getDirection()) { 
 			case WEST: {
-				return new Point(rover.getPoint().getX() - 1, rover.getPoint().getY());
+				return rover.getPoint().subtractStepOnX();
 			}
 			case NORTH: {
-				return new Point(rover.getPoint().getX(), rover.getPoint().getY() + 1 );
+				return rover.getPoint().addStepOnY();
 			}
 			case SOUTH: {
-				return new Point(rover.getPoint().getX(), rover.getPoint().getY() - 1 );
+				return rover.getPoint().subtractStepOnY();
 			}
 			case EAST: {
-				return new Point(rover.getPoint().getX() + 1, rover.getPoint().getY());
+				return rover.getPoint().addStepOnX();
 			}
 		}
 		return rover.getPoint();
@@ -89,16 +89,16 @@ public class RoverTranslator {
 	private Point applyCommandBackward(Rover rover) {
 		switch (rover.getDirection()) {
 			case WEST: {
-				return new Point(rover.getPoint().getX() + 1, rover.getPoint().getY());
+				return rover.getPoint().addStepOnX();
 			}
 			case NORTH: {
-				return new Point(rover.getPoint().getX(), rover.getPoint().getY() - 1 );
+				return rover.getPoint().subtractStepOnY();
 			}
 			case SOUTH: {
-				return new Point(rover.getPoint().getX(), rover.getPoint().getY() + 1 );
+				return rover.getPoint().addStepOnY();
 			}
 			case EAST: {
-				return new Point(rover.getPoint().getX() - 1, rover.getPoint().getY());
+				return rover.getPoint().subtractStepOnX();
 			}
 		}
 		return rover.getPoint();
