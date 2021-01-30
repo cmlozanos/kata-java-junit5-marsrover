@@ -1,10 +1,8 @@
 package com.kata.marsrover;
 
-public class Rover {
+import com.kata.marsrover.enumeration.Direction;
 
-	public enum Direction {
-		NORTH, EAST, SOUTH, WEST
-	}
+public class Rover {
 
 	private int x;
 	private int y;

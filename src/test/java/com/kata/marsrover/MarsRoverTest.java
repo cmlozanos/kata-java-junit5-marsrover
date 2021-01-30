@@ -10,14 +10,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import com.kata.marsrover.Rover.Direction;
+import com.kata.marsrover.enumeration.Command;
+import com.kata.marsrover.enumeration.Direction;
 
 public class MarsRoverTest {
 
-	public enum Command {
-		F, B, R, L;
-	}
-	
 	public class RoverTranslator {
 		
 		public Rover translate(String command, Rover rover) {
