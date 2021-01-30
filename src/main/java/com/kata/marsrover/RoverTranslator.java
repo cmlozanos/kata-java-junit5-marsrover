@@ -13,7 +13,7 @@ public class RoverTranslator {
 		return roverRepositioned;
 	}
 	
-	public Rover translate(String command, Rover rover) {
+	private Rover translate(String command, Rover rover) {
 
 		Point point = rover.getPoint();
 		Direction direction = rover.getDirection();

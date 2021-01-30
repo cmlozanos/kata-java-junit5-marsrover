@@ -46,14 +46,14 @@ public class MarsRoverTest {
 		var rover = new Rover(x, y, direction);
 		var roverTranslator = new RoverTranslator();
 
-		var roverAfterTranslation = roverTranslator.translate(command, rover);
+		var roverAfterTranslation = roverTranslator.navigate(command, rover);
 
 		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
 	
 	@Test
 	void testRoverTranslationForInvalidCommand() {
-		assertThrows(IllegalArgumentException.class, ()-> new RoverTranslator().translate("P", new Rover(0,0,"SOUTH")));
+		assertThrows(IllegalArgumentException.class, ()-> new RoverTranslator().navigate("P", new Rover(0,0,"SOUTH")));
 	}
 	
 	@ParameterizedTest(name = "translation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
@@ -69,7 +69,7 @@ public class MarsRoverTest {
 	})
 	void testRoverTranslationForRotationCommand(int x, int y, String direction, String command, int xExpected, int yExpected,
 			String directionExpected) {
-		var roverAfterTranslation = new RoverTranslator().translate(command, new Rover(x, y, direction));
+		var roverAfterTranslation = new RoverTranslator().navigate(command, new Rover(x, y, direction));
 		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
 	
