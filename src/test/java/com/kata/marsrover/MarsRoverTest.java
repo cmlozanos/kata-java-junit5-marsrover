@@ -15,7 +15,7 @@ import com.kata.marsrover.Rover.Direction;
 public class MarsRoverTest {
 
 	public enum Command {
-		F, B, R;
+		F, B, R, L;
 	}
 	
 	public class RoverTranslator {
@@ -33,6 +33,10 @@ public class MarsRoverTest {
 				}
 				case R: {
 					applyCommandRight(rover);
+					break;
+				}
+				case L: {
+					rover.setDirection(Direction.WEST);
 					break;
 				}
 			}
