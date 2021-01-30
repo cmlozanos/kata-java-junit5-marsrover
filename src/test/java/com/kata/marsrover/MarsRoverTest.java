@@ -73,6 +73,7 @@ public class MarsRoverTest {
 	@CsvSource({
 			"0, 0, NORTH, FRFRFR, 1, 0, WEST",
 			"0, 0, NORTH, FRLRFR, 1, 1, SOUTH",
+			"4, 2, EAST, FLFFFRFLB, 6, 4, NORTH"
 	})
 	void testRoverNavigationForMultipleCommands(int x, int y, String direction, String commands, int xExpected, int yExpected,
 			String directionExpected) {

@@ -14,14 +14,14 @@ it is facing.</ins>
 
 These could be any coordinates, supplied as arguments (x, y, direction) e.g. (4,2, EAST).
 
-### PartI
+### Part I
 The rover is given a command string which contains multiple commands. 
 
 This string must then be broken into each individual command and that command then executed. Implement the following commands:
-F -> Move forward on current heading
-B -> Move backwards on current heading
-L -> Rotate left by 90 degrees
-R -> Rotate right by 90 degrees
+* F -> Move forward on current heading
+* B -> Move backwards on current heading
+* L -> Rotate left by 90 degrees
+* R -> Rotate right by 90 degrees
 
 An example command might be FLFFFRFLB
 
@@ -60,3 +60,7 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 11 - Move direction responsibility to Direction enumeration previous direction
 * Step 12 - Delegate responsibility over Coordinates for forward
 * Step 12.1 - Delegate responsibility over Coordinates for backward
+
+## Build and Tests
+* If you are using windows, run: ``gradlew build test``
+* If you are using linux or mac version, run ``gradle build test``
