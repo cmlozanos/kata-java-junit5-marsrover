@@ -20,6 +20,25 @@ public class Coordinates {
 	}
 
 	public Coordinates forward() {
-		return null;
+		return new Coordinates(new Point(0, 1), Direction.NORTH);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Coordinates other = (Coordinates) obj;
+		if (direction != other.direction)
+			return false;
+		if (point == null) {
+			if (other.point != null)
+				return false;
+		} else if (!point.equals(other.point))
+			return false;
+		return true;
 	}
 }
