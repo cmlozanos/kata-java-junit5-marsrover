@@ -37,6 +37,11 @@ public class Coordinates {
 		return this.point;
 	}
 	
+	public Point backward() {
+		return null;
+	}
+	
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -60,5 +65,6 @@ public class Coordinates {
 	public String toString() {
 		return "Coordinates [point=" + point + ", direction=" + direction + "]";
 	}
+
 	
 }

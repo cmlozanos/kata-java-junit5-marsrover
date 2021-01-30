@@ -58,4 +58,5 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 10.2 - Move direction responsibility to Direction enumeration for SOUTH
 * Step 10.3 - Move direction responsibility to Direction enumeration for WEST
 * Step 11 - Move direction responsibility to Direction enumeration previous direction
-* Step 12 - Delegate responsibility over Coordinates
+* Step 12 - Delegate responsibility over Coordinates for forward
+* Step 12.1 - Delegate responsibility over Coordinates for backward
