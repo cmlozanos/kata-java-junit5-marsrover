@@ -43,6 +43,6 @@ public class Rover {
 	}
 
 	public Object getPoint() {
-		return null;
+		return String.format("Point (%d, %d)", this.x, this.y);
 	}
 }
