@@ -19,8 +19,22 @@ public class Coordinates {
 		return direction;
 	}
 
-	public Coordinates forward() {
-		return new Coordinates(new Point(0, 1), Direction.NORTH);
+	public Point forward() {
+		switch (this.direction) {
+		case WEST: {
+			return this.point.subtractStepOnX();
+		}
+		case NORTH: {
+			return this.point.addStepOnY();
+		}
+		case SOUTH: {
+			return this.point.subtractStepOnY();
+		}
+		case EAST: {
+			return this.point.addStepOnX();
+		}
+		}
+		return this.point;
 	}
 	
 	@Override
@@ -41,4 +55,10 @@ public class Coordinates {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Coordinates [point=" + point + ", direction=" + direction + "]";
+	}
+	
 }
