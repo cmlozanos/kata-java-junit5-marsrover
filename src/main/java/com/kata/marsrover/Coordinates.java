@@ -38,7 +38,21 @@ public class Coordinates {
 	}
 	
 	public Point backward() {
-		return null;
+		switch (direction) {
+		case WEST: {
+			return point.addStepOnX();
+		}
+		case NORTH: {
+			return point.subtractStepOnY();
+		}
+		case SOUTH: {
+			return point.addStepOnY();
+		}
+		case EAST: {
+			return point.subtractStepOnX();
+		}
+		}
+		return point;
 	}
 	
 	
