@@ -31,7 +31,7 @@ public class Navigator {
 			break;
 		}
 		case F: {
-			point = applyCommandForward(coordinates);
+			point = coordinates.forward();
 			break;
 		}
 		case R: {
@@ -45,24 +45,6 @@ public class Navigator {
 		}
 
 		return new Coordinates(point, direction);
-	}
-
-	private Point applyCommandForward(Coordinates coordinates) {
-		switch (coordinates.getDirection()) {
-		case WEST: {
-			return coordinates.getPoint().subtractStepOnX();
-		}
-		case NORTH: {
-			return coordinates.getPoint().addStepOnY();
-		}
-		case SOUTH: {
-			return coordinates.getPoint().subtractStepOnY();
-		}
-		case EAST: {
-			return coordinates.getPoint().addStepOnX();
-		}
-		}
-		return coordinates.getPoint();
 	}
 
 	private Point applyCommandBackward(Coordinates coordinates) {
