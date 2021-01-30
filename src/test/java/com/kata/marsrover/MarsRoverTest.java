@@ -21,6 +21,7 @@ public class MarsRoverTest {
 	void testRoverCreation(int x, int y, String direction) {
 		var rover = new Rover(x, y, direction);
 		assertEquals("Rover", rover.getClass().getSimpleName());
+		assertEquals(String.format("Point (%d, %d)", x, y), rover.getPoint());
 		assertEquals(String.format("(%d, %d) %s", x, y, direction), rover.report());
 	}
 

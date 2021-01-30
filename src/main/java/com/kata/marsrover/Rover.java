@@ -9,8 +9,8 @@ public class Rover {
 	private Direction direction;
 
 	public Rover(int x, int y, String direction) {
-		this.setX(x);
-		this.setY(y);
+		this.x = x;
+		this.y = y;
 		this.direction = Direction.valueOf(direction);
 	}
 
@@ -40,5 +40,9 @@ public class Rover {
 
 	public void setDirection(Direction direction) {
 		this.direction = direction;
+	}
+
+	public Object getPoint() {
+		return null;
 	}
 }
