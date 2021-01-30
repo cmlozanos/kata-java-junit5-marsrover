@@ -41,7 +41,8 @@ public class MarsRoverTest {
 	})
 	void testRoverNavigation(int x, int y, String direction, String command, int xExpected, int yExpected,
 			String directionExpected) {
-		var rover = new Rover(x, y, direction).navigate(command);
+		Rover rover = new Rover(x, y, direction);
+		rover.navigate(command);
 		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), rover.report());
 	}
 	
@@ -63,8 +64,9 @@ public class MarsRoverTest {
 	})
 	void testRoverNavigationForRotationCommand(int x, int y, String direction, String command, int xExpected, int yExpected,
 			String directionExpected) {
-		var roverAfterNavigation = new Rover(x, y, direction).navigate(command);
-		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterNavigation.report());
+		Rover rover = new Rover(x, y, direction);
+		rover.navigate(command);
+		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), rover.report());
 	}
 	
 	@ParameterizedTest(name = "navigation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
@@ -74,7 +76,8 @@ public class MarsRoverTest {
 	})
 	void testRoverNavigationForMultipleCommands(int x, int y, String direction, String commands, int xExpected, int yExpected,
 			String directionExpected) {
-		var rover = new Rover(x, y, direction).navigate(commands);
+		Rover rover = new Rover(x, y, direction);
+		rover.navigate(commands);
 		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), rover.report());
 	}
 	

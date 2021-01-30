@@ -40,21 +40,28 @@ public class Coordinates {
 	public Point backward() {
 		switch (direction) {
 		case WEST: {
-			return point.addStepOnX();
+			return this.point.addStepOnX();
 		}
 		case NORTH: {
-			return point.subtractStepOnY();
+			return this.point.subtractStepOnY();
 		}
 		case SOUTH: {
-			return point.addStepOnY();
+			return this.point.addStepOnY();
 		}
 		case EAST: {
-			return point.subtractStepOnX();
+			return this.point.subtractStepOnX();
 		}
 		}
 		return point;
 	}
 	
+	public Direction right() {
+		return this.direction.next();
+	}
+	
+	public Direction left() {
+		return this.direction.previous();
+	}
 	
 	@Override
 	public boolean equals(Object obj) {

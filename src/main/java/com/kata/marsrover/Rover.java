@@ -8,11 +8,15 @@ public class Rover {
 		this.navigator = new Navigator(x, y, direction);
 	}
 
+	public Rover(Navigator navigator) {
+		this.navigator = navigator;
+	}
+
 	public String report() {
 		return navigator.report();
 	}
 
-	public Rover navigate(String command) {
-		return navigator.navigate(command);
+	public void navigate(String command) {
+		navigator.navigate(command);
 	}
 }
