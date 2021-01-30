@@ -17,4 +17,15 @@ public class DirectionTest {
 	void nextDirection(Direction origin, Direction destination) {
 		assertEquals(destination.name(), origin.next().name());
 	}
+
+	@ParameterizedTest(name = "direction from {0} to next will be expected {1}")
+	@CsvSource({
+		"NORTH, WEST",
+		"WEST, SOUTH",
+		"SOUTH, EAST",
+		"EAST, NORTH",
+	})
+	void previousDirection(Direction origin, Direction destination) {
+		assertEquals(destination.name(), origin.previous().name());
+	}
 }

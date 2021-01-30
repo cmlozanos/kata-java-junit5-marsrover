@@ -13,4 +13,8 @@ public enum Direction {
 	private boolean isLastElement() {
 		return this.ordinal() == Direction.values().length - 1;
 	}
+
+	Direction previous() {
+		return null;
+	}
 }
