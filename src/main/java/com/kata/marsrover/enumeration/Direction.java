@@ -3,7 +3,7 @@ package com.kata.marsrover.enumeration;
 public enum Direction {
 	NORTH, EAST, SOUTH, WEST;
 
-	Direction next() {
+	public Direction next() {
 		if(isLastElement()) {
 			return Direction.values()[0];
 		}

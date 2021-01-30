@@ -35,7 +35,7 @@ public class Navigator {
 			break;
 		}
 		case R: {
-			direction = applyCommandRight(coordinates.getDirection());
+			direction = coordinates.getDirection().next();
 			break;
 		}
 		case L: {
@@ -60,24 +60,6 @@ public class Navigator {
 		}
 		case WEST: {
 			return Direction.SOUTH;
-		}
-		}
-		return direction;
-	}
-
-	private Direction applyCommandRight(Direction direction) {
-		switch (direction) {
-		case NORTH: {
-			return Direction.EAST;
-		}
-		case EAST: {
-			return Direction.SOUTH;
-		}
-		case SOUTH: {
-			return Direction.WEST;
-		}
-		case WEST: {
-			return Direction.NORTH;
 		}
 		}
 		return direction;
