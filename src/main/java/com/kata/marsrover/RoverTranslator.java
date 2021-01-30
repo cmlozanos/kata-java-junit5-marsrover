@@ -5,8 +5,12 @@ import com.kata.marsrover.enumeration.Direction;
 
 public class RoverTranslator {
 	
-	public Rover navigate(String string, Rover rover) {
-		return new Rover(1, 0, "WEST");
+	public Rover navigate(String commands, Rover rover) {
+		Rover roverRepositioned = rover;
+		for (String command : commands.split("")) {
+			roverRepositioned = translate(command, roverRepositioned);
+		}
+		return roverRepositioned;
 	}
 	
 	public Rover translate(String command, Rover rover) {

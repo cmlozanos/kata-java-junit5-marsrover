@@ -76,7 +76,7 @@ public class MarsRoverTest {
 	@ParameterizedTest(name = "translation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
 	@CsvSource({
 			"0, 0, NORTH, FRFRFR, 1, 0, WEST",
-			"0, 0, NORTH, FRLRFR, 1, 0, SOUTH",
+			"0, 0, NORTH, FRLRFR, 1, 1, SOUTH",
 	})
 	void testRoverTranslationForMultipleCommands(int x, int y, String direction, String commands, int xExpected, int yExpected,
 			String directionExpected) {
