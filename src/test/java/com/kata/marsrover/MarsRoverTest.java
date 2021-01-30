@@ -78,6 +78,6 @@ public class MarsRoverTest {
 		
 		var rover = new RoverTranslator().navigate("FRFRFR", new Rover(0,0,"NORTH"));
 
-		assertEquals(String.format("(%d, %d) %s", 0, 1 , "SOUTH"), rover.report());
+		assertEquals(String.format("(%d, %d) %s", 1, 0 , "WEST"), rover.report());
 	}
 }

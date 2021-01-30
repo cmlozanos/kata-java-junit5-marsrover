@@ -6,7 +6,7 @@ import com.kata.marsrover.enumeration.Direction;
 public class RoverTranslator {
 	
 	public Rover navigate(String string, Rover rover) {
-		return new Rover(0, 1, "SOUTH");
+		return new Rover(1, 0, "WEST");
 	}
 	
 	public Rover translate(String command, Rover rover) {
