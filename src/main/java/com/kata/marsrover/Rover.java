@@ -4,13 +4,11 @@ import com.kata.marsrover.enumeration.Direction;
 
 public class Rover {
 
-	private int x;
-	private int y;
+	private Point point;
 	private Direction direction;
 
 	public Rover(int x, int y, String direction) {
-		this.x = x;
-		this.y = y;
+		this.point = new Point(x, y);
 		this.direction = Direction.valueOf(direction);
 	}
 
@@ -23,26 +21,26 @@ public class Rover {
 	}
 
 	public int getY() {
-		return y;
+		return this.point.getY();
 	}
 
 	public void setY(int y) {
-		this.y = y;
+		this.point.setY(y);
 	}
 
 	public int getX() {
-		return x;
+		return this.point.getX();
 	}
 
 	public void setX(int x) {
-		this.x = x;
+		this.point.setX(x);
 	}
 
 	public void setDirection(Direction direction) {
 		this.direction = direction;
 	}
 
-	public Object getPoint() {
-		return String.format("Point (%d, %d)", this.x, this.y);
+	public String getPoint() {
+		return this.point.toString();
 	}
 }
