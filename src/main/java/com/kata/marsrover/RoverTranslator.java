@@ -7,109 +7,100 @@ public class RoverTranslator {
 	
 	public Rover translate(String command, Rover rover) {
 
+		Point point = rover.getPoint();
+		Direction direction = rover.getDirection();
+		
 		switch (Command.valueOf(command)){
 			case B: {
-				applyCommandBackward(command, rover);
+				point = applyCommandBackward(rover);
 				break;
 			}
 			case F: {
-				applyCommandForward(command, rover);
+				point = applyCommandForward(rover);
 				break;
 			}
 			case R: {
-				applyCommandRight(rover);
+				direction = applyCommandRight(rover.getDirection());
 				break;
 			}
 			case L: {
-				applyCommandLeft(rover);
+				direction = applyCommandLeft(rover.getDirection());
 				break;
 			}
 		}
 
-		return new Rover(rover.getX(), rover.getY(), rover.getDirection().name());
+		return new Rover(point, direction);
 	}
 
-	private void applyCommandLeft(Rover rover) {
-		switch (rover.getDirection()){
+	private Direction applyCommandLeft(Direction direction) {
+		switch (direction){
 		case NORTH: {
-			rover.setDirection(Direction.WEST);
-			break;
+			return Direction.WEST;
 		}
 		case EAST: {
-			rover.setDirection(Direction.NORTH);
-			break;
+			return Direction.NORTH;
 		}
 		case SOUTH:{
-			rover.setDirection(Direction.EAST);
-			break;
+			return Direction.EAST;
 		}
 		case WEST:{
-			rover.setDirection(Direction.SOUTH);
-			break;
+			return Direction.SOUTH;
 		}
 		}
+		return direction;
 	}
 	
-	private void applyCommandRight(Rover rover) {
-		switch (rover.getDirection()){
+	private Direction applyCommandRight(Direction direction) {
+		switch (direction){
 			case NORTH: {
-				rover.setDirection(Direction.EAST);
-				break;
+				return Direction.EAST;
 			}
 			case EAST: {
-				rover.setDirection(Direction.SOUTH);
-				break;
+				return Direction.SOUTH;
 			}
 			case SOUTH:{
-				rover.setDirection(Direction.WEST);
-				break;
+				return Direction.WEST;
 			}
 			case WEST:{
-				rover.setDirection(Direction.NORTH);
-				break;
+				return Direction.NORTH;
 			}
 		}
+		return direction;
 	}
 
-	private void applyCommandForward(String command, Rover rover) {
+	private Point applyCommandForward(Rover rover) {
 		switch (rover.getDirection()) { 
 			case WEST: {
-				rover.setX(rover.getX() - 1);
-				break;
+				return new Point(rover.getPoint().getX() - 1, rover.getPoint().getY());
 			}
 			case NORTH: {
-				rover.setY(rover.getY() + 1);
-				break;
+				return new Point(rover.getPoint().getX(), rover.getPoint().getY() + 1 );
 			}
 			case SOUTH: {
-				rover.setY(rover.getY() - 1);
-				break;
+				return new Point(rover.getPoint().getX(), rover.getPoint().getY() - 1 );
 			}
 			case EAST: {
-				rover.setX(rover.getX() + 1);
-				break;
+				return new Point(rover.getPoint().getX() + 1, rover.getPoint().getY());
 			}
 		}
+		return rover.getPoint();
 	}
 
-	private void applyCommandBackward(String command, Rover rover) {
+	private Point applyCommandBackward(Rover rover) {
 		switch (rover.getDirection()) {
 			case WEST: {
-				rover.setX(rover.getX() + 1);
-				break;
+				return new Point(rover.getPoint().getX() + 1, rover.getPoint().getY());
 			}
 			case NORTH: {
-				rover.setY(rover.getY() - 1);
-				break;
+				return new Point(rover.getPoint().getX(), rover.getPoint().getY() - 1 );
 			}
 			case SOUTH: {
-				rover.setY(rover.getY() + 1);
-				break;
+				return new Point(rover.getPoint().getX(), rover.getPoint().getY() + 1 );
 			}
 			case EAST: {
-				rover.setX(rover.getX() - 1);
-				break;
+				return new Point(rover.getPoint().getX() - 1, rover.getPoint().getY());
 			}
 		}
+		return rover.getPoint();
 	}
 }
