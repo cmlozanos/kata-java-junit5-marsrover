@@ -5,7 +5,7 @@ import com.kata.marsrover.enumeration.Direction;
 
 public class Navigator {
 
-	private Coordinates coordinates;
+	private final Coordinates coordinates;
 
 	public Navigator(int x, int y, String direction) {
 		this.coordinates = new Coordinates(new Point(x, y), Direction.valueOf(direction));
