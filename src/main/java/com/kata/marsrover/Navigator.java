@@ -17,7 +17,7 @@ public class Navigator {
 			coordinates = navigate(command, coordinates);
 		}
 		
-		this.coordinates = new Coordinates(coordinates.getPoint(), coordinates.getDirection());
+		this.coordinates = coordinates;
 	}
 
 	private Coordinates navigate(String command, Coordinates coordinates) {
