@@ -16,7 +16,8 @@ public class Navigator {
 		for (String command : commands.split("")) {
 			coordinates = translate(command, coordinates);
 		}
-		return new Rover(coordinates.getPoint().getX(), coordinates.getPoint().getY(), coordinates.getDirection().name());
+		return new Rover(coordinates.getPoint().getX(), coordinates.getPoint().getY(),
+				coordinates.getDirection().name());
 	}
 
 	private Coordinates translate(String command, Coordinates coordinates) {
@@ -120,22 +121,6 @@ public class Navigator {
 
 	public String report() {
 		return String.format("%s %s", this.coordinates.getPoint(), this.coordinates.getDirection());
-	}
-
-	public Point getPoint() {
-		return this.coordinates.getPoint();
-	}
-
-	public Direction getDirection() {
-		return this.coordinates.getDirection();
-	}
-
-	public int getY() {
-		return this.getPoint().getY();
-	}
-
-	public int getX() {
-		return this.getPoint().getX();
 	}
 
 }
