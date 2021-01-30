@@ -52,3 +52,4 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 7.7 - Given an individual command L and rover initialized with direction EAST rover should rotate to NORTH
 * Step 8 - Add X and Y as Point
 * Step 9 - Add Multiple commands
+* Step 9.1 - Add Multiple commands parameterized

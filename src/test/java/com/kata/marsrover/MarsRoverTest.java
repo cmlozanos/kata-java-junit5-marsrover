@@ -73,11 +73,15 @@ public class MarsRoverTest {
 		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
 	
-	@Test
-	void testRoverTranslationForMultipleCommands() {
-		
-		var rover = new RoverTranslator().navigate("FRFRFR", new Rover(0,0,"NORTH"));
-
-		assertEquals(String.format("(%d, %d) %s", 1, 0 , "WEST"), rover.report());
+	@ParameterizedTest(name = "translation from ({0},{1} {2}) with command {3} expected ({4},{5} {6})")
+	@CsvSource({
+			"0, 0, NORTH, FRFRFR, 1, 0, WEST",
+			"0, 0, NORTH, FRLRFR, 1, 0, SOUTH",
+	})
+	void testRoverTranslationForMultipleCommands(int x, int y, String direction, String commands, int xExpected, int yExpected,
+			String directionExpected) {
+		var roverAfterTranslation = new RoverTranslator().navigate(commands, new Rover(x, y, direction));
+		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
+	
 }
