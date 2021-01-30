@@ -36,7 +36,7 @@ public class MarsRoverTest {
 					break;
 				}
 				case L: {
-					rover.setDirection(Direction.WEST);
+					applyCommandLeft(rover);
 					break;
 				}
 			}
@@ -44,6 +44,27 @@ public class MarsRoverTest {
 			return new Rover(rover.getX(), rover.getY(), rover.getDirection().name());
 		}
 
+		private void applyCommandLeft(Rover rover) {
+			switch (rover.getDirection()){
+			case NORTH: {
+				rover.setDirection(Direction.WEST);
+				break;
+			}
+			case EAST: {
+				rover.setDirection(Direction.NORTH);
+				break;
+			}
+			case SOUTH:{
+				rover.setDirection(Direction.EAST);
+				break;
+			}
+			case WEST:{
+				rover.setDirection(Direction.SOUTH);
+				break;
+			}
+			}
+		}
+		
 		private void applyCommandRight(Rover rover) {
 			switch (rover.getDirection()){
 				case NORTH: {
