@@ -39,30 +39,12 @@ public class Navigator {
 			break;
 		}
 		case L: {
-			direction = applyCommandLeft(coordinates.getDirection());
+			direction = coordinates.getDirection().previous();
 			break;
 		}
 		}
 
 		return new Coordinates(point, direction);
-	}
-
-	private Direction applyCommandLeft(Direction direction) {
-		switch (direction) {
-		case NORTH: {
-			return Direction.WEST;
-		}
-		case EAST: {
-			return Direction.NORTH;
-		}
-		case SOUTH: {
-			return Direction.EAST;
-		}
-		case WEST: {
-			return Direction.SOUTH;
-		}
-		}
-		return direction;
 	}
 
 	private Point applyCommandForward(Coordinates coordinates) {

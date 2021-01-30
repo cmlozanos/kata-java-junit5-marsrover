@@ -18,4 +18,8 @@ public class Coordinates {
 	public Direction getDirection() {
 		return direction;
 	}
+
+	public Coordinates forward() {
+		return null;
+	}
 }
