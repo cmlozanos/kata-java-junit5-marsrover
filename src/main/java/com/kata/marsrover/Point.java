@@ -11,14 +11,6 @@ public class Point {
 		this.x = x;
 		this.y = y;
 	}
-
-	public int getY() {
-		return y;
-	}
-
-	public int getX() {
-		return x;
-	}
 	
 	public Point addStepOnX() {
 		return new Point(x + STEPS_BY_COMMAND_OPERATION, y);
