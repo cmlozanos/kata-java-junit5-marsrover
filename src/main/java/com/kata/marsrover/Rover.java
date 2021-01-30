@@ -40,7 +40,7 @@ public class Rover {
 		this.direction = direction;
 	}
 
-	public String getPoint() {
-		return this.point.toString();
+	public Point getPoint() {
+		return this.point;
 	}
 }
