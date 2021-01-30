@@ -3,7 +3,7 @@ package com.kata.marsrover;
 import com.kata.marsrover.enumeration.Command;
 import com.kata.marsrover.enumeration.Direction;
 
-public class RoverTranslator {
+public class RoverNavigator {
 	
 	public Rover navigate(String commands, Rover rover) {
 		Rover roverRepositioned = rover;
