@@ -72,4 +72,12 @@ public class MarsRoverTest {
 		var roverAfterTranslation = new RoverTranslator().translate(command, new Rover(x, y, direction));
 		assertEquals(String.format("(%d, %d) %s", xExpected, yExpected, directionExpected), roverAfterTranslation.report());
 	}
+	
+	@Test
+	void testRoverTranslationForMultipleCommands() {
+		
+		var rover = new RoverTranslator().navigate("FRFRFR", new Rover(0,0,"NORTH"));
+
+		assertEquals(String.format("(%d, %d) %s", 0, 1 , "SOUTH"), rover.report());
+	}
 }

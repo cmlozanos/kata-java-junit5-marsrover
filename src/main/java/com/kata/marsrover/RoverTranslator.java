@@ -5,6 +5,10 @@ import com.kata.marsrover.enumeration.Direction;
 
 public class RoverTranslator {
 	
+	public Rover navigate(String string, Rover rover) {
+		return null;
+	}
+	
 	public Rover translate(String command, Rover rover) {
 
 		Point point = rover.getPoint();
@@ -103,4 +107,6 @@ public class RoverTranslator {
 		}
 		return rover.getPoint();
 	}
+
+	
 }
