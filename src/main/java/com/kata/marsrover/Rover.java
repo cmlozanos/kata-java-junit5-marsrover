@@ -13,7 +13,7 @@ public class Rover {
 	}
 
 	public String report() {
-		return String.format("(%d, %d) %s", getX(), getY(), getDirection());
+		return String.format("%s %s", getPoint(), getDirection());
 	}
 
 	public Direction getDirection() {
