@@ -4,6 +4,6 @@ public enum Direction {
 	NORTH, EAST, SOUTH, WEST;
 
 	Direction next() {
-		return null;
+		return Direction.EAST;
 	}
 }
