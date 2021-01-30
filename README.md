@@ -53,4 +53,7 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 8 - Add X and Y as Point
 * Step 9 - Add Multiple commands
 * Step 9.1 - Add Multiple commands parameterized
-* Step 10 - Move direction responsability to Direction enumeration
+* Step 10 - Move direction responsibility to Direction enumeration
+* Step 10.1 - Move direction responsibility to Direction enumeration for EAST
+* Step 10.2 - Move direction responsibility to Direction enumeration for SOUTH
+* Step 10.3 - Move direction responsibility to Direction enumeration for WEST

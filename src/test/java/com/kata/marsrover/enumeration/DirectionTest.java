@@ -2,12 +2,19 @@ package com.kata.marsrover.enumeration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class DirectionTest {
 
-	@Test
-	void nextDirection() {
-		assertEquals(Direction.EAST.name(), Direction.NORTH.next().name());
+	@ParameterizedTest(name = "direction from {0} to next will be expected {1}")
+	@CsvSource({
+			"NORTH, EAST",
+			"EAST, SOUTH",
+			"SOUTH, WEST",
+			"WEST, NORTH",
+	})
+	void nextDirection(Direction origin, Direction destination) {
+		assertEquals(destination.name(), origin.next().name());
 	}
 }
