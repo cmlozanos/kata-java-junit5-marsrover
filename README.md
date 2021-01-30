@@ -46,3 +46,4 @@ Once the full command string has been followed, the rover reports it's current c
 * Step 7.1 - Given an individual command R and rover initialized with direction EAST rover should rotate to SOUTH
 * Step 7.2 - Given an individual command R and rover initialized with direction SOUTH rover should rotate to WEST
 * Step 7.3 - Given an individual command R and rover initialized with direction WEST rover should rotate to NORTH
+* Step 7.4 - Given an individual command L and rover initialized with direction NORTH rover should rotate to WEST

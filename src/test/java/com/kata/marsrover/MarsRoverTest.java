@@ -153,6 +153,7 @@ public class MarsRoverTest {
 			"0, 0, EAST, R, 0, 0, SOUTH",
 			"0, 0, SOUTH, R, 0, 0, WEST",
 			"0, 0, WEST, R, 0, 0, NORTH",
+			"0, 0, NORTH, L, 0, 0, WEST",
 	})
 	void testRoverTranslationForRotationCommand(int x, int y, String direction, String command, int xExpected, int yExpected,
 			String directionExpected) {
