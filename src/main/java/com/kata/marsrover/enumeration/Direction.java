@@ -1,5 +1,9 @@
 package com.kata.marsrover.enumeration;
 
 public enum Direction {
-	NORTH, EAST, SOUTH, WEST
+	NORTH, EAST, SOUTH, WEST;
+
+	Direction next() {
+		return null;
+	}
 }
