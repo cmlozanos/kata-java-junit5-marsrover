@@ -14,6 +14,8 @@ it is facing.</ins>
 
 These could be any coordinates, supplied as arguments (x, y, direction) e.g. (4,2, EAST).
 
+![alt text](https://github.com/cmlozanos/kata-java-junit5-marsrover/blob/master/coordinates.png?raw=true)
+
 ### Part I
 The rover is given a command string which contains multiple commands. 
 
