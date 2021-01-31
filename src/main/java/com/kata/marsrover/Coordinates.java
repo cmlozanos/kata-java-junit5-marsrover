@@ -36,7 +36,7 @@ public class Coordinates {
 		}
 		return this.point;
 	}
-	
+
 	public Point backward() {
 		switch (direction) {
 		case WEST: {
@@ -54,15 +54,15 @@ public class Coordinates {
 		}
 		return point;
 	}
-	
+
 	public Direction right() {
 		return this.direction.next();
 	}
-	
+
 	public Direction left() {
 		return this.direction.previous();
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -87,5 +87,4 @@ public class Coordinates {
 		return "Coordinates [point=" + point + ", direction=" + direction + "]";
 	}
 
-	
 }

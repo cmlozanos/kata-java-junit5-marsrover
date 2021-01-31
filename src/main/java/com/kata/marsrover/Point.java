@@ -5,13 +5,13 @@ public class Point {
 	private static final int STEPS_BY_COMMAND_OPERATION = 1;
 	public final int x;
 	public final int y;
-	
+
 	public Point(int x, int y) {
 		super();
 		this.x = x;
 		this.y = y;
 	}
-	
+
 	public Point addStepOnX() {
 		return new Point(x + STEPS_BY_COMMAND_OPERATION, y);
 	}
@@ -23,11 +23,11 @@ public class Point {
 	public Point addStepOnY() {
 		return new Point(x, y + STEPS_BY_COMMAND_OPERATION);
 	}
-	
+
 	public Point subtractStepOnY() {
 		return new Point(x, y - STEPS_BY_COMMAND_OPERATION);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

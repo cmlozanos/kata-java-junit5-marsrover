@@ -12,12 +12,12 @@ public class Navigator {
 	}
 
 	public void navigate(String commands) {
-		Coordinates coordinates = this.coordinates;
+		Coordinates coordinatesRepositioned = this.coordinates;
 		for (String command : commands.split("")) {
-			coordinates = navigate(command, coordinates);
+			coordinatesRepositioned = navigate(command, coordinatesRepositioned);
 		}
-		
-		this.coordinates = coordinates;
+
+		this.coordinates = coordinatesRepositioned;
 	}
 
 	private Coordinates navigate(String command, Coordinates coordinates) {

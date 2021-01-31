@@ -4,14 +4,14 @@ public enum Direction {
 	NORTH, EAST, SOUTH, WEST;
 
 	public Direction next() {
-		if(isLastElement()) {
+		if (isLastElement()) {
 			return Direction.values()[0];
 		}
 		return Direction.values()[this.ordinal() + 1];
 	}
 
 	public Direction previous() {
-		if(isFirstElement()) {
+		if (isFirstElement()) {
 			return Direction.values()[Direction.values().length - 1];
 		}
 		return Direction.values()[this.ordinal() - 1];

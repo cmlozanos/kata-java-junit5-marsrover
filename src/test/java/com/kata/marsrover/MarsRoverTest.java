@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class MarsRoverTest {
+class MarsRoverTest {
 	
 	@ParameterizedTest(name = "x: {0}, y:{1}, direction:{2}")
 	@CsvSource({

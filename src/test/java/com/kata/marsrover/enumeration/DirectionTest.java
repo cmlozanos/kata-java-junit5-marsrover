@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class DirectionTest {
+class DirectionTest {
 
 	@ParameterizedTest(name = "direction from {0} to next will be expected {1}")
 	@CsvSource({

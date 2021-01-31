@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import com.kata.marsrover.enumeration.Direction;
 
-public class CoordinatesTest {
+class CoordinatesTest {
 
 	
 	@ParameterizedTest(name = "forward from ({0},{1} {2}) expected ({3},{4})")
