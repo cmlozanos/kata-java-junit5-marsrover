@@ -66,3 +66,5 @@ Once the full command string has been followed, the rover reports it's current c
 ## Build and Tests
 * If you are using windows, run: ``gradlew build test``
 * If you are using linux or mac version, run ``gradle build test``
+
+* If you want use a user interface there is a class named Application with terminal uses
