@@ -33,8 +33,9 @@ public class Coordinates {
 		case EAST: {
 			return this.point.addStepOnX();
 		}
+		default:
+			return this.point;
 		}
-		return this.point;
 	}
 
 	public Point backward() {

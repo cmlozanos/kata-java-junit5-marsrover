@@ -1,5 +1,9 @@
 package com.kata.marsrover;
 
+import static java.lang.Math.random;
+
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import com.kata.marsrover.enumeration.Command;
@@ -21,9 +25,18 @@ public class Application {
 			printHelp();
 			return;
 		}
-		Rover rover = new Rover(x, y, direction.name());
+		Set<Point> obstacles = new HashSet<>();
+		for (int i = 0; i < 10; i++) {
+			obstacles.add(new Point(getRandomNumber(-10, 10), getRandomNumber(-10, 10)));
+		}
+		System.out.println("Obstacles: " + obstacles);
+		Rover rover = new Rover(x, y, direction.name(), obstacles);
 		rover.navigate(commands);
 		System.out.println(rover.report());
+	}
+
+	public static int getRandomNumber(int min, int max) {
+		return (int) ((random() * (max - min)) + min);
 	}
 
 	private static void printHelp() {
